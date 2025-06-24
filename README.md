@@ -9,3 +9,5 @@ Plugins implemented:
 
 Refer to init.lua for keybinds docs
 Refer to lua/plugins/* for their use case
+
+Consider modifying/deleting some leftover files
