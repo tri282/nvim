@@ -1,7 +1,7 @@
 --- SOME KEYBINDS START
 
 --- ctrl + p: open file list
---- space + f + g: live grep + jump
+--- ctrl + f + g: live grep + jump
 --- ctrl + n: show file system
 
 --- SOME KEYBINDS END
