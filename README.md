@@ -1,6 +1,6 @@
 My current nvim's config.  
 
-Plugins implemented:
+Plugins implemented:  
     - Catppuccin  
     - Lualine  
     - Neotree  
