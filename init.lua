@@ -2,7 +2,7 @@
 
 --- ctrl + p: open file list
 --- ctrl + f + g: live grep + jump
---- ctrl + n: show file system
+--- ctrl + n: show file system, default: on left
 
 --- SOME KEYBINDS END
 
@@ -25,7 +25,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 --- Lazy setup
-require("lazy").setup("plugins")
+require('lazy').setup {
+ require 'plugins.neotree',
+ require 'plugins.catppuccin',
+ require 'plugins.lualine',
+ require 'plugins.treesitter',
+ -- require 'plugins.telescope',
+ --  require 'plugins.lsp',
+}
 
 require("vim-options")
 
