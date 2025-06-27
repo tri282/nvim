@@ -30,8 +30,8 @@ require('lazy').setup {
  require 'plugins.catppuccin',
  require 'plugins.lualine',
  require 'plugins.treesitter',
- -- require 'plugins.telescope',
- --  require 'plugins.lsp',
+ require 'plugins.telescope',
+ require 'plugins.lsp',
 }
 
 require("vim-options")
