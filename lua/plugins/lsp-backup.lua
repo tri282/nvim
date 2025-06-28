@@ -112,7 +112,7 @@ return {
         },
       },
 
-      --ruff_lsp = {},
+      ruff_lsp = {},
       pyright = {},
       bashls = {},
       cssls = {},
@@ -127,7 +127,7 @@ return {
 
     require('mason').setup()
 
-    local ensure_installed_tools = {
+    local ensure_installed = {
       "lua-language-server",
       "python-lsp-server",
       "ruff-lsp",
@@ -142,27 +142,11 @@ return {
       "pyright",
       "sqls"
     }
-    require('mason-tool-installer').setup {
-      ensure_installed = ensure_installed_tools
-    }
 
-    local ensure_installed_lsp = {
-      "lua_ls",
-      "pylsp",
-      --"ruff_lsp",
-      "bashls",
-      "cssls",
-      "clangd",
-      "dockerls",
-      "gitlab_ci_ls",
-      "html",
-      "jdtls",
-      "jsonls",
-      "pyright",
-      "sqls"
-    }
+    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
     require('mason-lspconfig').setup {
-      ensure_installed = ensure_installed_lsp,
+      ensure_installed = ensure_installed,
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
