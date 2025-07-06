@@ -34,6 +34,7 @@ require("lazy").setup({
 	require("plugins.lsp"),
 	require("plugins.conform"),
 	require("plugins.blink_cmp"),
+	require("plugins.debugging"),
 })
 
 require("vim-options")
