@@ -7,15 +7,14 @@ Plugins implemented:
     - Telescope  
     - Treesitter  
     - LSP  
-    - Formatter
-    - Autocompletion
+    - Formatter  
+    - Autocompletion  
     - DAP  
     - Conform    
 
 Refer to init.lua for keybinds docs  
 Refer to lua/plugins/* for their use case  
 
-TODO: extra/cosmetic improvements  
-TODO: Java and C debugger. Some formatting  
+TODO: extra/cosmetic improvements, new color schemes  
 
 Codes are gatherred and modified/improvised from: https://github.com/nvim-lua/kickstart.nvim.git
