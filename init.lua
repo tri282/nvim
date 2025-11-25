@@ -1,11 +1,12 @@
 --- SOME KEYBINDS START
 
 --- ctrl + p: open file list
---- ctrl + f + g: live grep + jump
+--- ctrl + f: live grep + jump
 --- ctrl + n: show file system, default: on left
 
---- ctrl + d + t: breakpoint for debugging
---- ctrl + d + c: continue debugging
+--- space + n: split window to the right
+--- space + left/right/top/bottom: switch focus window
+--- space + d: close current window
 
 --- SOME KEYBINDS END
 
@@ -29,17 +30,9 @@ vim.opt.rtp:prepend(lazypath)
 
 --- lazy setup
 require("lazy").setup({
-	require("plugins.neotree"),
-	require("plugins.catppuccin"),
-	require("plugins.lualine"),
-	require("plugins.treesitter"),
 	require("plugins.telescope"),
-	require("plugins.lsp"),
-	require("plugins.conform"),
-	require("plugins.blink_cmp"),
-	require("plugins.debugging"),
-	require("plugins.gitsigns"),
-	require("plugins.comments"),
+	require("plugins.neotree"),
+  require("plugins.kanagawa")
 })
 
 require("vim-options")
@@ -85,17 +78,14 @@ vim.o.cursorline = true
 --- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
 
---- highlight when yanking texts
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
-})
+-- window splitting
+vim.keymap.set('n', '<leader>n', ':vsplit<CR>')
 
 --- switch between windows
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set('n', '<leader><Up>',    '<C-w>k')
+vim.keymap.set('n', '<leader><Down>',  '<C-w>j')
+vim.keymap.set('n', '<leader><Left>',  '<C-w>h')
+vim.keymap.set('n', '<leader><Right>', '<C-w>l')
+
+-- close current windows
+vim.keymap.set('n', '<leader>d', ':close<CR>')
